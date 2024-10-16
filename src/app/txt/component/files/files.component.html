@@ -1,0 +1,97 @@
+<div class="card">
+  <tabset>
+    <tab heading="Archivos" id="tab1">
+    	<div class="d-flex justify-content-center">
+    	  <button type="button" class="btn btn-primary mx-2" [disabled]="isButtonDisabled" (click)="process()">Procesar</button>
+		  <button type="button" class="btn btn-primary mx-2" (click)="list()">Lista</button>
+		  <button type="button" class="btn btn-warning mx-2" (click)="deletexml()">Vaciar</button>
+		</div>
+         
+
+       <!---<div *ngIf="isLoading" class="loading-container">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <p>Cargando, por favor espera...</p>
+        </div>-->
+
+        <div *ngIf="isLoading">
+            <app-loading/>
+        </div>
+
+        <div *ngIf="showList" class="mt-3">
+             <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <ul>
+                    <li class="list-group-item" *ngFor="let f of files">
+                        {{ f.name }} - {{ f.size }} Mbytes
+                    </li>
+                </ul>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertList()"></button>
+            </div>
+        </div>
+        
+        <div *ngIf="showAlert" class="mt-3">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+               Este archivo no es xml : {{ err }}
+              <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
+            </div>
+        </div>
+
+        <div *ngIf="showInfo" class="mt-3">
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <ul>
+                  <li>Archivos procesados: {{ responseData.count }}</li>
+                  <li>Archivos XML fallidos: {{ responseData.counterfailxml }}</li>
+                  <li>Total de archivos encontrados: {{ responseData.total }}</li>
+                  <li>Minutos de procesamiento: {{ responseData.minutes }}</li>
+                  <li>Segundos de procesamiento: {{ responseData.seconds }}</li>
+                  <li> Total: {{ fileSize }}</li>
+                </ul> 
+              <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
+            </div>
+        </div>
+        
+
+
+
+        <div *ngIf="showListPE" class="mt-3">
+            <p>Archivos procesados</p>
+             <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <ul>
+                    <li class="list-group-item" *ngFor="let f of filesP">
+                        {{ f.name }} - {{ f.size }} Mbytes
+                    </li>
+                </ul>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertList()"></button>
+            </div>
+            <p>Archivos no procesados</p>
+             <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <ul>
+                    <li class="list-group-item" *ngFor="let f of filesE">
+                        {{ f.name }} - {{ f.size }} Mbytes
+                    </li>
+                </ul>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertList()"></button>
+            </div>
+        </div>
+
+
+       <div *ngIf="showAlertErr" class="mt-3">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{ err }}
+              <button type="button" class="btn-close" aria-label="Close" (click)="closeAlertERROR()"></button>
+            </div>
+        </div>
+
+
+    </tab>
+    <tab heading="Errores">
+    	<div class="d-flex justify-content-center">
+			<button type="button" class="btn btn-success mx-2" (click)="download()" >Descargar</button>
+    	</div>
+    </tab>
+
+  </tabset>
+    
+
+</div>

@@ -1,0 +1,38 @@
+ /* Espacio adicional entre botones y posibles ajustes */
+.d-flex {
+  margin-top: 20px;  /* Añade un margen superior si lo deseas */
+}
+
+
+.card {
+  width: 800px; /* Ancho del card */
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra */
+  border-radius: 10px; /* Bordes redondeados */
+  display: flex; /* Asegura que el contenido del card se ajuste correctamente */
+  flex-direction: column; /* Para alinear el contenido verticalmente */
+}
+
+.card-title {
+  color: #007bff; /* Cambiar el color del título */
+}
+
+.card-body {
+  padding: 20px; /* Aumentar el padding interno */
+}
+
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh; /* Ajusta según tu necesidad */
+  text-align: center;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}

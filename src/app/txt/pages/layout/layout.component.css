@@ -1,0 +1,67 @@
+/* Estilos globales */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: white; /* Fondo blanco */
+}
+
+/* Layout principal */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('../../../../assets/fondo.jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Ajusta la imagen para que cubra todo el área */
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+.header {
+  background-image: url('../../../../assets/cintillo2.jpeg'); /* Ruta de la imagen */
+  background-size: cover; /* Ajusta la imagen para que cubra el área */
+  background-position: center; /* Centra la imagen en el header */
+  height: 100px; /* Ajusta la altura del encabezado según sea necesario */
+  width: 100%; /* Asegura que el header ocupe todo el ancho */
+}
+/* Header */
+.header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+/* Main content */
+.content {
+display: flex;
+  justify-content: center;  /* Centra horizontalmente */
+  min-height: 100vh;        /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  position: relative;  
+  margin-top: 20px; 
+}
+/* Footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #e7e7e7;
+}
+
+.background-image {
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: absolute; /* Establece la posición absoluta para que la imagen se superponga */
+    top: 20%; /* Coloca la imagen en la esquina superior izquierda */
+    left: 0;
+    width: 100%; /* Haz que la imagen cubra todo el contenedor */
+    height: 100%;
+    z-index: -1; /* Coloca la imagen detrás del contenido principal */
+    /* Ajusta el fondo como desees, por ejemplo: */
+    background-image: url('../../../../assets/fondo.jpeg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para que cubra todo el contenedor */
+    opacity: 0.9; /* Ajusta la opacidad de la imagen si lo deseas */
+}
